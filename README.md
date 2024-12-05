@@ -1,5 +1,7 @@
 # Acme Blogs
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f4d66d36-a04c-4e81-ae24-dbafc4d75605/deploy-status)](https://app.netlify.com/sites/sparkly-baklava-238278/deploys?branch=)
+
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/gitdagray/js_acme_blogs)
 
 **Start by clicking the Remix on Glitch button above.**
