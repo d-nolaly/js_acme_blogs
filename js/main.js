@@ -258,12 +258,12 @@ function createSelectOptions(jsonData){
     if(!jsonData) return;
 
    const selectOptions = [];
-        jsonData.forEach((user) => {
+        for(const user of jsonData) {
         const option = document.createElement('option');
         option.value = user.id;
         option.textContent = user.name;
         selectOptions.push(option);
-    });
+    };
     return selectOptions;
 }
 
@@ -312,12 +312,12 @@ function deleteChildElements(parentElement){
 function addButtonListeners(){
     const mainButtons = document.querySelectorAll('main button');
     if(mainButtons){
-        mainButtons.forEach((button) =>{
+        for(const button of mainButtons) {
             const postId = button.dataset.postId;
             if(postId){
                 button.addEventListener("click", function (e){toggleComments(e, postId)}, false);
             }
-        });
+        };
     }
     return mainButtons;
 }
@@ -328,12 +328,12 @@ function addButtonListeners(){
 function removeButtonListeners(){
     const mainButtons = document.querySelectorAll('main button');
     if(mainButtons){
-        mainButtons.forEach((button) =>{
+        for(const button of mainButtons){
             const postId = button.dataset.postId;
             if(postId){
                 button.removeEventListener("click", function (e){toggleComments(e, postId)}, false);
             }
-        });
+        };
     }
     return mainButtons;
 }
@@ -344,7 +344,7 @@ function removeButtonListeners(){
 function createComments(jsonComments){
     if(!jsonComments) return;
     const comments = document.createDocumentFragment();
-    jsonComments.forEach((comment) => {
+    for(const comment of jsonComments) {
         if(!comment) return;
         const article = document.createElement('article');
         const h3 = createElemWithText('h3', comment.name, 'h3Comment');
@@ -352,7 +352,7 @@ function createComments(jsonComments){
         const p2 = createElemWithText('p', `From: ${comment.email}`, 'emailComment');
         article.append(h3, p1, p2);
         comments.append(article);
-    })
+    };
    return comments;
 }
 
@@ -363,9 +363,9 @@ function populateSelectMenu(jsonData){
     if(!jsonData) return;
     const selectMenu = document.getElementById('selectMenu');
     const optionMenu = createSelectOptions(jsonData);
-    optionMenu.forEach((option) => {
+    for(const option of optionMenu){
         selectMenu.append(option);
-    });
+    };
     return selectMenu;
 }
 
